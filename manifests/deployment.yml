@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "azuremltb-6425"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "azuremltb-6425"
+  template:
+    metadata:
+      labels:
+        app: "azuremltb-6425"
+    spec:
+      containers:
+        - name: "azuremltb-6425"
+          image: "azuremltb003.azurecr.io/azuremltb"
+          ports:
+          - containerPort: 80
